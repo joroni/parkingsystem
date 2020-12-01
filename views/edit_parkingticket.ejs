@@ -1,0 +1,37 @@
+<%- include layouts/header.ejs %>
+
+    <div class="page-data">
+
+        <form method="post" action="/parkingtickets/edit/<%=data[0].id%>">
+            <table cellpadding="11">
+                <tr>
+                    <td class="label">Lot</td>
+                    <td>: <input type="text" name="parking_lot_id" value="<%=data[0].parking_lot_id%>" required readonly></td>
+                </tr>
+                <tr>
+                    <td class="label" valign="top">Spot</td>
+                    <td>:
+                        <input type="text" name="parking_spot_id" required value="<%=data[0].parking_spot_id%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Vehicle No.</td>
+                    <td>: <input type="text" value="<%=data[0].vehicle_number%>" name="vehicle_number" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Type</td>
+                    <td>: <input type="text" name="parking_spot_type" value="<%=data[0].parking_spot_type%>" required></td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                        <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAddParkingTicket()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+    <%- include layouts/footer.ejs %>
